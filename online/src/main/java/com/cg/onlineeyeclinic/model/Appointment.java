@@ -14,12 +14,16 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+/**  Appointment class for OnlineEyeClinic 
+ * 
+ * @author Nandini Nanabala
+ * @version 1.0
+ */
 
 @Entity
 @Table(name="Appointments")
-public class Appointment implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class Appointment {
+	//attributes for appointment module
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
@@ -35,23 +39,24 @@ public class Appointment implements Serializable {
 	@Max(value=200000)
 	@Positive(message="fees limit between 100 to 200000")
 	private Double consultationFee;
-	
-	private Doctor doctor;
-	private Patient patient;
+	/*private Doctor doctor;
+	private Patient patient;*/
+// Default Constructor
 public Appointment()
 {
 	
 }
+// Parameterized Constructor 
 public Appointment(LocalDate dateOfAppointment, LocalTime timeOfAppointment, Double consultationFee)
 {
 	super();
-	this.dateOfAppointment = dateOfAppointment;
+    this.dateOfAppointment = dateOfAppointment;
 	this.timeOfAppointment = timeOfAppointment;
 	this.consultationFee = consultationFee;
-	this.doctor = doctor;
-	this.patient = patient;
+	/*this.doctor = doctor;
+	this.patient = patient;*/
 }
-
+//Setters and Getters 
 public Integer getAppointmentId() {
 	return appointmentId;
 }
@@ -77,7 +82,7 @@ public double getConsultationFee() {
 public void setConsultationFee(Double consultationFee) {
 	this.consultationFee = consultationFee;
 }
-public Doctor getDoctor() {
+/*public Doctor getDoctor() {
 	return doctor;
 }
 public void setDoctor(Doctor doctor) {
@@ -89,7 +94,8 @@ public Patient getPatient() {
 public void setPatient(Patient patient) {
 	this.patient = patient;
 }
-
+*/
+// toString method to print objects in stringform
 @Override
 public String toString() {
 	return "Appointment [appointmentId=" + appointmentId + ", dateOfAppointment="+dateOfAppointment+", timeOfAppointment="+timeOfAppointment+", consultationFee="+consultationFee+"]";

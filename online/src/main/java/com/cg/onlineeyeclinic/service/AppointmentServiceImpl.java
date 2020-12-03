@@ -30,7 +30,7 @@ public class AppointmentServiceImpl implements IAppointmentService{
 		Optional<Appointment> appointments = appointmentRepository.findById(appointmentId);
 		if(appointments.isEmpty())
 		{
-			throw new InvalidAppointmentException("Appointment with Id "+appointmentId+" doesn't exist");
+			throw new InvalidAppointmentException("Appointment with Id"+appointmentId+"doesn't exist");
 		}
 		appointment = appointmentRepository.save(appointment);
 		return appointment;
@@ -61,14 +61,13 @@ public class AppointmentServiceImpl implements IAppointmentService{
 
 	@Override
 	public List<Appointment> viewAllAppointments() {
-		List<Appointment> list = appointmentRepository.findAll();
-		return list;
+    
+    			return appointmentRepository.findAll();
 	}
 
 	@Override
 	public List<Appointment> viewAppointments(LocalDate date) {
-		List<Appointment> list = appointmentRepository.viewAppointments(date);
-		return list;
+		return appointmentRepository.viewAppointments(date); 
 	}
 
 }

@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-
-import com.cg.onlineeyeclinic.Exception.AppointmentIdNotFoundException;
-import com.cg.onlineeyeclinic.Exception.InvalidAppointmentException;
 import com.cg.onlineeyeclinic.model.Appointment;
 @Service
 public interface IAppointmentService{
